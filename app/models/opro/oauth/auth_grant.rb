@@ -18,8 +18,6 @@ class Opro::Oauth::AuthGrant < ActiveRecord::Base
 
   serialize :permissions, Hash
 
-  attr_accessible :code, :access_token, :refresh_token, :access_token_expires_at, :permissions, :user_id, :user, :application_id, :application
-
   def can?(value)
     HashWithIndifferentAccess.new(permissions)[value]
   end

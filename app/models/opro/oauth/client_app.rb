@@ -12,8 +12,6 @@ class Opro::Oauth::ClientApp < ActiveRecord::Base
 
   serialize :permissions, Hash
 
-  attr_accessible :user, :name, :app_id, :client_secret, :app_secret, :secret
-
   def self.find_by_client_id(client_id)
     where(app_id: client_id).first
   end
